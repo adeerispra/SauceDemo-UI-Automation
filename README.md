@@ -2,12 +2,12 @@
 
 UI automation framework for [SauceDemo](https://www.saucedemo.com/) using Playwright, JavaScript, Page Object Model, tagged test suites, and GitHub Actions CI/CD.
 
-This repository covers an end-to-end QA automation workflow: manual test case design, automation candidate selection, POM implementation, tagged execution, test reporting, and CI execution.
+This repository covers an end-to-end QA automation workflow: test case design, automation candidate selection, POM implementation, tagged execution, test reporting, and CI execution.
 
 ## Coverage Summary
 
 - 84 automated Playwright tests
-- Manual test case source: `SauceDemo_UI_Manual_Test_Cases.xlsx`
+- Test case source: `SauceDemo_UI_Test_Cases.xlsx`
 - Automated scope is based on test cases marked `Automation Candidate = Yes`
 - Coverage includes positive, negative, and edge cases
 - Main areas covered:
@@ -36,7 +36,7 @@ This repository covers an end-to-end QA automation workflow: manual test case de
 ```text
 .
 +-- .github/workflows/playwright.yml
-+-- SauceDemo_UI_Manual_Test_Cases.xlsx
++-- SauceDemo_UI_Test_Cases.xlsx
 +-- playwright.config.js
 +-- package.json
 +-- src
@@ -50,12 +50,12 @@ This repository covers an end-to-end QA automation workflow: manual test case de
 
 ## Test Design
 
-The manual workbook is the source of truth. Each automated test maps back to a manual test case ID from `SauceDemo_UI_Manual_Test_Cases.xlsx`.
+The test case workbook is the source of truth. Each automated test maps back to a test case ID from `SauceDemo_UI_Test_Cases.xlsx`.
 
 Test titles follow this convention:
 
 ```text
-<tag(s)> <manual test case id> <scenario title>
+<tag(s)> <test case id> <scenario title>
 ```
 
 Example:
