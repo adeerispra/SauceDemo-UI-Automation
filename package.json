@@ -1,0 +1,29 @@
+{
+  "name": "saucedemo-ui-automation",
+  "version": "1.0.0",
+  "description": "SauceDemo UI automation framework using Playwright, JavaScript, POM, tags, and CI/CD.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:smoke": "playwright test --grep @smoke",
+    "test:sanity": "playwright test --grep @sanity",
+    "test:regression": "playwright test --grep @regression",
+    "test:ci": "playwright test --grep @smoke",
+    "report": "playwright show-report"
+  },
+  "keywords": [
+    "playwright",
+    "javascript",
+    "qa-automation",
+    "ui-testing",
+    "pom",
+    "saucedemo"
+  ],
+  "author": "Ade Sembiring",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@playwright/test": "^1.55.0"
+  }
+}
