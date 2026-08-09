@@ -7,7 +7,8 @@ This repository covers an end-to-end QA automation workflow: test case design, a
 ## Coverage Summary
 
 - 84 automated Playwright tests
-- Test case source: `SauceDemo_UI_Test_Cases.xlsx`
+- Test case source: [SauceDemo UI Test Cases](https://docs.google.com/spreadsheets/d/1sfwjntDOzB16QviFT6yt5O8UtX54xv8EDWU9gfp9pqw/edit?gid=2024695099#gid=2024695099)
+- Local workbook: `SauceDemo_UI_Test_Cases.xlsx`
 - Automated scope is based on test cases marked `Automation Candidate = Yes`
 - Coverage includes positive, negative, and edge cases
 - Main areas covered:
@@ -34,18 +35,51 @@ This repository covers an end-to-end QA automation workflow: test case design, a
 ## Project Structure
 
 ```text
-.
-+-- .github/workflows/playwright.yml
-+-- SauceDemo_UI_Test_Cases.xlsx
-+-- playwright.config.js
-+-- package.json
-+-- src
-|   +-- data
-|   +-- fixtures
-|   +-- pages
-|   +-- tests
-|   +-- utils
-+-- README.md
+SauceDemo UI Automation/
+├── .github/
+│   └── workflows/
+│       └── playwright.yml                  # GitHub Actions CI workflow
+├── src/
+│   ├── data/                               # Test data used by specs and page objects
+│   │   ├── checkout.data.js                # Checkout form and customer data
+│   │   ├── index.js                        # Central export for test data modules
+│   │   ├── messages.data.js                # Expected validation and UI messages
+│   │   ├── products.data.js                # Product names, prices, and product metadata
+│   │   ├── routes.data.js                  # Application routes and URLs
+│   │   └── users.data.js                   # SauceDemo test users and credentials
+│   ├── fixtures/                           # Shared Playwright test fixtures
+│   │   └── pages.fixture.js                # Initializes page objects for tests
+│   ├── pages/                              # Page Object Model classes
+│   │   ├── BasePage.js                     # Shared base page behavior
+│   │   ├── CartPage.js                     # Cart page locators and actions
+│   │   ├── CheckoutCompletePage.js         # Checkout completion page behavior
+│   │   ├── CheckoutInformationPage.js      # Checkout information form behavior
+│   │   ├── CheckoutOverviewPage.js         # Checkout overview and totals behavior
+│   │   ├── InventoryPage.js                # Product listing page behavior
+│   │   ├── LoginPage.js                    # Login page locators and actions
+│   │   ├── NavigationMenuPage.js           # Side menu, logout, and reset state behavior
+│   │   └── ProductDetailPage.js            # Product detail page behavior
+│   ├── tests/                              # Playwright UI test specifications
+│   │   ├── cart.spec.js                    # Cart feature tests
+│   │   ├── checkout-complete.spec.js       # Checkout complete page tests
+│   │   ├── checkout-information.spec.js    # Checkout information validation tests
+│   │   ├── checkout-overview.spec.js       # Checkout overview and order summary tests
+│   │   ├── e2e-order.spec.js               # End-to-end purchase flow tests
+│   │   ├── inventory.spec.js               # Inventory listing, sorting, and cart tests
+│   │   ├── login.spec.js                   # Login and authentication tests
+│   │   ├── navigation.spec.js              # Menu, logout, and navigation tests
+│   │   ├── product-detail.spec.js          # Product detail page tests
+│   │   └── user-types.spec.js              # Standard, locked out, problem, and glitch user tests
+│   └── utils/                              # Reusable helper utilities
+│       └── price.utils.js                  # Price parsing and calculation helpers
+├── .env.example                            # Environment variable template
+├── .gitignore                              # Git ignored files and folders
+├── jsconfig.json                           # JavaScript project configuration
+├── package-lock.json                       # Locked dependency versions
+├── package.json                            # Dependencies and npm scripts
+├── playwright.config.js                    # Playwright test configuration
+├── SauceDemo_UI_Test_Cases.xlsx            # Local test case workbook
+└── README.md                               # Project documentation
 ```
 
 ## Test Design
